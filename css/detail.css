@@ -1,0 +1,313 @@
+body {
+    background: #f4f1ed;
+}
+main {
+    width: 90%;
+    max-width: 1500px;
+    margin: 0 auto;
+
+    /* background: pink; */
+}
+section {
+    padding-top: 160px;
+}
+.detail_box {
+    display: flex;
+
+    /* background-color: skyblue; */
+}
+/* d_img ////////////////////////////////////////////////////////// */
+.d_img_wrap {
+    width: 70%;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    /* background: yellowgreen; */
+    /* height: 500px; */
+}
+.d_imgbox {
+    width: 50%;
+    /* height: 41.2vw;
+    overflow: hidden; */
+    padding: 5px;
+    box-sizing: border-box;
+    font-size: 0;
+}
+.d_imgbox > img {
+    width: 100%;
+}
+/* d_desc ////////////////////////////////////////////////////////////// */
+.d_desc_wrap {
+    width: 40%;
+    padding-left: 30px;
+
+    float: left;
+    width: 30%;
+    padding-left: 30px;
+    box-sizing: border-box;
+    position: static;
+    z-index: 999;
+
+    /* background-color: bisque; */
+    /* height: 500px; */
+}
+.d_desc_fix {
+    position: fixed;
+    top: 160px;
+    max-width: 427px;
+    width: 24%;
+}
+.headcate {
+    display: flex;
+    padding-top: 3px;
+}
+.headcate > li {
+    padding-right: 10px;
+    box-sizing: border-box;
+    color: #999;
+    font-size: 12px;
+    font-family: 'Poppins', sans-serif;
+}
+.d_title {
+    font-size: 22px;
+    margin: 10px 0;
+}
+.n_price {
+    margin-right: 10px;
+    display: inline-block;
+    position: relative;
+}
+.price_line::before {
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: black;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+}
+.sale_per {
+    width: 30px;
+    height: 30px;
+    background: black;
+    color: white;
+    border-radius: 50%;
+    font-size: 13px;
+    text-align: center;
+    line-height: 30px;
+    display: inline-block;
+}
+/* d_tap /////////////////////////////////////////////////////////// */
+.d_tap {
+    margin-top: 30px;
+
+    /* background-color: pink; */
+}
+.d_tap > ul {
+    display: flex;
+}
+.d_tap > ul > li {
+    margin-right: 10px;
+    font-size: 12px;
+    color: #999;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+}
+.tap_li_active {
+    font-weight: 500;
+    color: black !important;
+    border-bottom: 1px solid;
+}
+.tap_content {
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    color: #666;
+    padding: 15px 0;
+
+    position: relative;
+}
+.tap {    
+    display: none;
+    padding: 0;
+}
+.tap_active {
+    display: block !important;
+}
+/* d_opt 컬러, 사이즈 선택 //////////////////////////////////////////// */
+.d_opt {
+    border-top: 1px solid #d7d7d7;
+    /* padding-top: 10px; */
+}
+/* .d_color_box, .d_size_box {
+    overflow: hidden;
+} */
+.d_opt_title {
+    width: 30px;
+    height: 51px;
+    font-size: 13px;
+    display: inline-block;
+    line-height: 51px;
+    /* float: left; */
+}
+.d_color {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #d7d7d7;
+    display: inline-block;
+    box-sizing: border-box;
+    cursor: pointer;
+    margin-right: 5px;
+    /* float: left; */
+
+    font-size: 0;
+    vertical-align: middle;
+}
+.d_color_active {
+    border: 2px solid black !important;
+}
+.d_size_box {
+    padding: 10px 0;
+}
+.d_size {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 12px;
+    background: #d7d7d7;
+    color: white;
+    display: inline-block;
+    box-sizing: border-box;
+    margin-right: 5px;
+    cursor: pointer;
+    /* float: left; */
+    padding: 0 !important;
+}
+.d_size_active {
+    border: 2px solid black;
+    line-height: 26px;
+}
+/* 선택 옵션 info ///////////////////////////////////////////////////// */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.ch_opt {
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    border-top: 2px solid #d7d7d7;
+}
+.product_info {
+    padding: 5px 0;
+}
+.qty_wrap {
+    width: 67px;
+    /* display: flex; */
+    position: relative;
+}
+.qty_wrap > input {
+    border: none;
+    background: none;
+    width: 20px;
+    text-align: center;
+}
+/* .count_btn {
+    width: 41px;
+    height: 22px;
+    position: relative;
+} */
+.count {
+    position: absolute;
+}
+.count_up {
+    top: 0;
+    left: 25px;
+}
+.count_down {
+    bottom: 0;
+    left: 25px;
+}
+.btn_close {
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+.hidden_index {
+    display: none;
+}
+.product_price {
+    font-size: 13px;
+    font-weight: 500;
+    text-align: end;
+}
+.total_price_box {
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    border-top: 1px solid #d7d7d7;
+    padding-top: 20px;
+    text-align: right;
+}
+.pad_l {
+    padding-left: 10px;
+}
+em {
+    font-size: 17px;
+}
+.final_price {
+    padding: 0 5px;
+}
+.d_buy {
+    padding-top: 30px;
+}
+.d_buy > a {
+    display: block;
+    width: 50%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    box-sizing: border-box;
+    float: left;
+}
+.cart {
+    border: 1px solid;
+}
+.buy {
+    background-color: black;
+    color: white;
+}
+/* board ////////////////////////////////////////////////////// */
+.board_wrap {
+    font-family: 'Poppins', sans-serif;
+    width: 70%;
+    padding-top: 90px;
+    /* margin: 0 auto; */
+}
+.board {
+    padding-top: 20px;
+    margin-bottom: 100px;
+}
+
+.board_top {
+    overflow: hidden;
+}
+.board_top > h3 {
+    float: left;
+    margin: 0;
+}
+.b_top_r {
+    float: right;
+}
+.b_top_r > a {
+    padding-left: 15px;
+    box-sizing: border-box;
+}
+.board_bot {
+    text-align: center;
+    border-top: 1px solid #d7d7d7;
+    border-bottom: 1px solid #d7d7d7;
+    margin: 0;
+    padding: 90px 0 ;
+}

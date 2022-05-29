@@ -1,0 +1,263 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+
+     <script defer src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+     <script defer src="./js/common.js"></script>
+     <script defer src="./js/detail.js"></script>
+ 
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="./css/common.css">
+     <link rel="stylesheet" href="./css/detail.css">
+
+ </head>
+ <body>
+    <div class="wrap">
+        <header>
+            <nav>
+                <ul>
+                    <li class="logo">
+                        <a href="./index.html">Betty</a>
+                    </li>
+                    <li class="gnb">
+                        <ul>
+                            <li>SHOP
+                                <ul class="gnb_inner">
+                                    <li><a href="product.html?cate=new">New Arrivals</a></li>
+                                    <li><a href="product.html?cate=outer">Outerwear</a></li>
+                                    <li><a href="product.html?cate=top">Top</a></li>
+                                    <li><a href="product.html?cate=bottom">Bottom</a></li>
+                                    <li><a href="product.html?cate=dress">Dress</a></li>
+                                    <li><a href="product.html?cate=acc">Accessories</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="product.html?cate=outer">COLLECTION</a></li>
+                            <li><a href="product.html?cate=top">ABOUT</a></li>
+                            <li><a href="product.html?cate=bottom">COMMUNITY</a></li>
+                            <li><a href="product.html?cate=dress">MY ACCOUNT</a></li>
+                        </ul>
+                    </li>
+                    <li class="submenu">
+                        <ul>
+                            <li><a href="#">LOGIN</a></li>
+                            <li><a href="#">SEARCH</a></li>
+                            <li><a href="#">CART(<span>0</span>)</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section>
+                <div class="detail_box">
+                    <div class="d_img_wrap">
+                        <!-- 이미지 불러오기 -->
+                    </div>
+                    <div class="d_desc_wrap">
+                        <div class="d_desc_fix">
+                            <ul class="headcate">
+                                <li><a href="./index.html">HOME &gt;</a></li>
+                                <li><a href="./product.html?cate=new">SHOP &gt;</a></li>
+                                <!-- <li><a href="./product.html?cate=new">New Arrivals</a></li> -->
+                            </ul>
+                            <div class="desc_box">
+                                <h2 class="d_title"></h2>
+                                <div class="n_price price_line">KRW<span class="n_o_price">30000</span></div>
+                                <div class="n_price">KRW<span class="n_s_price"></span></div>
+                                <div class="sale_per"><span class="per">16</span>%</div>
+                            </div>
+                            <div class="d_tap">
+                                <ul>
+                                    <li class="tap_li_active">Description</li>
+                                    <li>Size Guide</li>
+                                    <li>Shipping</li>
+                                </ul>
+                                <div class="tap_content">
+                                    <div class="tap tap_active">상품 간단 설명</div>
+                                    <div class="tap">Side length 135.5 cm. <br> Back length 163.8 cm.</div>
+                                    <div class="tap">
+                                        <span>SHIPPING</span><br><br>
+                                        모든 국내배송은 기본 배송비가 2,500원 이며 50,000원 이상 무료배송입니다. 상품 배송은 CJ 대한통운 택배로 배송됩니다.<br><br>
+                                        <span>RETURNS</span><br><br>
+                                        포장을 개봉하였거나 포장이 훼손되어 상품가치가 상실된 경우에는 교환/반품이 불가능합니다. 상품을 받으신 그대로 5일 이내로 반송해주셔야 합니다. 5일이내에 상품을 반송하지 않거나, 상품의 태그 훼손, 착용 흔적 등의 상품가치가 훼손 된 경우 교환/반품이 불가능합니다.
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="d_opt">
+                                <div class="d_color_box">
+                                    <div class="d_opt_title">COLOR</div>
+                                    <div class="d_color"><span>베이지</span></div>
+                                    <div class="d_color"><span>베이지</span></div>
+                                    <div class="d_color"><span>베이지</span></div>
+                                    <div class="d_color"><span>베이지</span></div>
+                                    <div class="d_color"><span>베이지</span></div>
+                                </div>
+                                <div class="d_size_box">
+                                    <div class="d_opt_title">SIZE</div>
+                                    <div class="d_size">S</div>
+                                    <div class="d_size">L</div>
+                                    <div class="d_size">XL</div>
+                                </div>
+                            </div> -->
+                            <table>
+                                <tbody class="d_opt">
+                                    <tr>
+                                        <td class="d_opt_title">COLOR</td>
+                                        <td class="d_color_box">
+                                            <!-- <div class="d_color"><span>베이지</span></div>
+                                            <div class="d_color"><span>베이지</span></div>
+                                            <div class="d_color"><span>베이지</span></div>
+                                            <div class="d_color"><span>베이지</span></div>
+                                            <div class="d_color"><span>베이지</span></div> -->
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="d_opt_title">SIZE</td>
+                                        <td class="d_size_box">
+                                            <!-- <div class="d_size">S</div>
+                                            <div class="d_size">L</div>
+                                            <div class="d_size">XL</div> -->
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <!-- 선택 옵션 info -->
+                            <table>
+                                <tbody class="choose">
+                                    <!-- <tr class="ch_opt">
+                                        <td class="product_info">
+                                            <span>Sample Product</span><br>-<span>베이지</span>/<span>S</span>  
+                                        </td>
+                                        <td class="product_qty">
+                                            <div class="qty_wrap">
+                                                <input type="text" value="1" class="qty_val">
+                                                
+                                                <img class="count count_up" src="./img/btn_count_up.gif" alt="btn_count_up">
+                                                <img class="count count_down" src="./img/btn_count_down.gif" alt="btn_count_down">
+                                                <img class="count btn_close" src="./img/btn_price_delete.gif" alt="btn_price_delete">
+                                                
+                                                <input type="text" class="hidden_index" value="0">
+                                            </div>
+                                        </td>
+                                        <td class="product_price">KRW <span class="total_price">40000</span></td>
+                                    </tr> -->
+                                </tbody>
+                            </table>
+                            <div class="total_price_box">
+                                <span>
+                                    <strong>총 상품금액</strong>(수량):
+                                </span>
+                                <span class="pad_l">
+                                    <em><strong>KRW<span class="final_price">0</span></strong></em>
+                                    (<span class="total_qty">0</span>)개
+                                </span>
+                            </div>
+                            <div class="d_buy">
+                                <a href="#" class="cart">Add to cart</a>
+                                <a href="#" class="buy">Buy Now !</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="board_wrap">
+                <div class="board review">
+                    <div class="board_top">
+                        <h3>REVIEW</h3>
+                        <span class="b_top_r">
+                            <a href="#">List</a>
+                            <a href="#">Write</a>
+                        </span>
+                    </div>
+                    <p class="board_bot">게시물이 없습니다</p>
+                </div>
+                <div class="board qna">
+                    <div class="board_top">
+                        <h3>Q&A</h3>
+                        <span class="b_top_r">
+                            <a href="#">List</a>
+                            <a href="#">Write</a>
+                        </span>
+                    </div>
+                    <p class="board_bot">게시물이 없습니다</p>
+                </div>
+            </section>
+        </main>
+
+
+        <!-- footer -->
+        <footer>
+            <div class="fot f_left">
+                <h2>Betty</h2>
+                <ul>
+                    <li>About</li>
+                    <li>Agreement</li>
+                    <li>Privacy</li>
+                    <li>Guide</li>
+                </ul>
+                <p class="c_i_title">2021 © MONGLAB All rights reserved / <br>Design by MONGLAB.</p>
+            </div>
+            <div class="fot f_right">
+                <div class="company_info">
+                    <ul>
+                        <li>
+                            <h3>C/S Center</h3>
+                            <p class="c_i_title">
+                                <span>T.1588-1234</span>
+                                <br>
+                                <span>Mon-Fri 10:00 ~ 17:00</span>
+                                <br>
+                                <span>Off-time PM 12:00 ~ PM 02:00</span>
+                                <br>
+                                <span>DAY OFF(Weekend, Holiday)</span>
+                            </p>
+                        </li>
+                        <li>
+                            <h3>Bank Account</h3>
+                            <p class="c_i_title">
+                                <span>기업 123456-12-1234</span>
+                                <br>
+                                <span>Holder : (주)베티</span>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="company_info">
+                    <p>
+                        <span class="c_i_title">상호</span>
+                        <span>(주)Betty</span>
+                        <br>
+                        <span class="c_i_title">대표</span>
+                        <span>김대표</span>
+                        <br>
+                        <span class="c_i_title">사업자 등록번호</span>
+                        <span>123-12-123456</span>
+                        <br>
+                        <span class="c_i_title">통신판매업 신고</span>
+                        <span>제 2021-00000-1234호 [사업자정보확인]</span>
+                        <br>
+                        <span class="c_i_title">주소</span>
+                        <span>04524 서울특별시 중구 태평로1가 31 서울특별시청</span>
+                        <br>
+                        <span class="c_i_title">팩스</span>
+                        <span>070-1234-1234</span>
+                        <br>
+                        <span class="c_i_title">개인정보관리책임자</span>
+                        <span>김개인(mail@mail.com)</span>
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </div> 
+
+
+ </body>
+ </html>
