@@ -110,6 +110,9 @@ $(document).on('click', '.btn_next', function(){
         left: last_item_pos
     }, 0)
 
+    // 호버
+    $('.l_b_desc').removeClass('l_b_desc_active')
+    $('.l_b_item').eq((lb_c_index + 2)  % lb_length).find('.l_b_desc').addClass('l_b_desc_active')
     lb_c_index+=1;
 })
 
