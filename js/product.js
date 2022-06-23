@@ -1,6 +1,9 @@
+$(document).ready(function(){
+
+
 let cate = get_url_info("cate");
 
-console.log(cate)
+// console.log(cate)
 
 
 $.ajax({
@@ -11,7 +14,7 @@ $.ajax({
     success: function(data) {
         // db 잘 다녀왔을때
 
-        console.log(data)
+        // console.log(data)
 
         // sub_nav 카테고리 이름 찍어주기 
         let page_title = ""
@@ -103,6 +106,9 @@ $.ajax({
                 // $('.cate_ul').children('li').eq(i).css({opacity: '0.2'})
             }
         }
+
+
+        
     },
     error: function(){ 
         // db 못 다녀왔을때
@@ -110,4 +116,5 @@ $.ajax({
 })
 
 
+})
 

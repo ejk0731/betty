@@ -1,7 +1,10 @@
+$(document).ready(function(){
+
+
 let cate = get_url_info("cate");
 let i_no = get_url_info("item_no");
 
-console.log(cate, i_no)
+// console.log(cate, i_no)
 
 
 $.ajax({
@@ -12,7 +15,7 @@ $.ajax({
     success: function(data) {
         // db 잘 다녀왔을때
 
-        console.log(data)
+        // console.log(data)
 
         // headcate 카테고리 이름 찍어주기 
         let page_title = ""
@@ -33,14 +36,18 @@ $.ajax({
         
         // 랜덤으로 이미지 5개 더 찍기
         let b_rand = [];
-
-        while(b_rand.length < 5) {
+        let rand_num = 5;
+        if(document.body.clientWidth <= 450){
+            $('.d_img_wrap').append(d_imgbox)
+            rand_num = 4;
+        }
+        while(b_rand.length < rand_num) {
             let rand = Math.random(); // 0.00 ~ 0.99 => 0~99
 
             rand = Math.floor(((rand * 100 % 12)));
-            if(b_rand.indexOf(rand) == -1 && b_rand.indexOf(rand) != i_no - 1) { // rand랑 같은게 없다
-        // console.log(rand)
-                b_rand.push(rand);
+            if(b_rand.indexOf(rand) == -1 && rand != (i_no - 1)) { // rand랑 같은게 없다
+        // console.log(b_rand.indexOf(rand))
+        b_rand.push(rand);
 
                 d_imgbox = `<div class="d_imgbox">
                                 <img src="./img/${cate}/${data[rand].src}" alt="d_img">
@@ -49,6 +56,41 @@ $.ajax({
                 $('.d_img_wrap').append(d_imgbox)
             }
         }
+        
+        // 모바일 서브 이미지 클릭시 메인 이미지 변경
+        $(window).resize(function(){
+
+            if(document.body.clientWidth <= 450){
+                $('.d_imgbox').click(function(){
+                    let click_src = $(this).find('img').attr('src');
+                //    console.log($(this).find('img').attr('src')) 
+                    $('.d_imgbox').eq(0).find('img').attr('src', `${click_src}`)
+                })
+    
+            }
+            // desc box 멈추기
+            if(document.body.clientWidth >= 805){
+                setTimeout(function(){
+                    
+                    let b_o_t = $('.board_wrap').offset().top;
+                    $(window).scroll(function(){
+                        
+                    
+                    let s_top = $(window).scrollTop() + $(window).outerHeight();;
+
+                    if(s_top >= b_o_t + 200) {
+                        $('.d_desc_fix').css({position: 'absolute', top: b_o_t - 420})
+                    }
+                    else {
+                        $('.d_desc_fix').css({position: 'fixed', top: '160px'})
+                    }
+                    
+                })
+
+                }, 100)
+            }   
+        })
+
         // desc_box 정보 불러오기
         $('.headcate').append(`<li><a href="./product.html?cate=${cate}">${page_title}</a></li>`)
         $('.d_title').text(data[i_no - 1].title)
@@ -86,6 +128,7 @@ $.ajax({
         let cho_array = [cur_color, cur_size];
 
         $('.d_color').click(function(){
+            $(this).addClass('d_color_active')
             cur_color = $(this).find('span').text();
             cho_array = [cur_color, cur_size];
             if(cur_size != "" ){
@@ -96,6 +139,7 @@ $.ajax({
         })
         
         $('.d_size').click(function(){
+            $(this).addClass('d_size_active')
             cur_size = $(this).text();
             cho_array = [cur_color, cur_size];
             
@@ -120,6 +164,8 @@ $.ajax({
                     cho_chk = false;
                     cur_color = "";
                     cur_size = "";
+                    $('.d_color').removeClass('d_color_active')
+                    $('.d_size').removeClass('d_size_active')
                 }
             }
             // 같은 옵션 없으면 새로 박스 추가하기
@@ -132,25 +178,25 @@ $.ajax({
                                 <td class="product_qty">
                                     <div class="qty_wrap">
                                         <input type="text" value="1" class="qty_val">
-                                        
                                         <img class="count count_up" src="./img/btn_count_up.gif" alt="btn_count_up">
                                         <img class="count count_down" src="./img/btn_count_down.gif" alt="btn_count_down">
                                         <img class="count btn_close" src="./img/btn_price_delete.gif" alt="btn_price_delete">
-                                        
                                         <input type="text" class="hidden_index" value="${cho_array}">
                                     </div>
                                 </td>
                                 <td class="product_price">KRW <span class="total_price">${Number(data[i_no - 1].s_price).toLocaleString('ko-KR')}</span></td>
                             </tr>`
 
-console.log(typeof((data[i_no - 1].s_price)))
-console.log("11111: " + Number(data[i_no - 1].s_price).toLocaleString('ko-KR'));                            
+// console.log(typeof((data[i_no - 1].s_price)))
+// console.log("11111: " + Number(data[i_no - 1].s_price).toLocaleString('ko-KR'));                            
                 $('.choose').append(ch_opt)
                 final_price()
 
                 cur_color = "";
                 cur_size = "";
-                console.log(cho_array)
+                // console.log(cho_array)
+                $('.d_color').removeClass('d_color_active')
+                $('.d_size').removeClass('d_size_active')
             }
         }
 
@@ -162,13 +208,16 @@ console.log("11111: " + Number(data[i_no - 1].s_price).toLocaleString('ko-KR'));
             qty_val = Number($(this).prev('.qty_val').val()) + 1;
             $(this).prev('.qty_val').val(qty_val)
             
-            total_price()
+            total_price($(this))
             final_price()
+            
         })
+
 
         $(document).on('click', '.count_down', function(){
             qty_val = Number($(this).prev().prev('.qty_val').val()) - 1;
-            console.log(qty_val)
+            // console.log(qty_val)
+            // console.log(this)
             if(qty_val < 1){
                 alert('최소수량은 1개 입니다.')
             }
@@ -185,11 +234,15 @@ console.log("11111: " + Number(data[i_no - 1].s_price).toLocaleString('ko-KR'));
             final_price()
         })
 
-        function total_price() {
+        function total_price(el) {
+
             let total_price = "";
-            total_price += Number($('.qty_val').eq().val()) * Number(qty_val * data[i_no - 1].s_price);
-            $(this).parent().parent().next().children('.total_price').text(comma(total_price))
-            // console.log(25555554444666664)
+            total_price =  qty_val * Number(data[i_no - 1].s_price);
+            
+            console.log(1)
+            console.log(el.attr('class'));
+            
+            el.parent().parent().next().find('.total_price').text(comma(total_price));
         }
 
         
@@ -208,7 +261,7 @@ console.log("11111: " + Number(data[i_no - 1].s_price).toLocaleString('ko-KR'));
         
         // 천단위 콤마 찍기
         function comma(num) {
-console.log("num: " + num)            
+// console.log("num: " + num)            
             return num.toLocaleString('ko-KR')
         }
 
@@ -234,11 +287,16 @@ console.log("num: " + num)
 // $('.d_tap > ul > li').eq(0).trigger('click')
 
 $('.d_tap > ul > li').click(function(){
-    console.log($(this).index())
+    // console.log($(this).index())
     $('.tap').removeClass('tap_active')
     $('.d_tap > ul > li').removeClass('tap_li_active')
     $('.d_tap > ul > li').eq($(this).index()).addClass('tap_li_active')
     $('.tap').eq($(this).index()).addClass('tap_active')
        
 })
-    
+
+
+
+
+
+})

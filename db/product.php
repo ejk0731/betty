@@ -5,7 +5,7 @@
     
     $sql = "select * from member_eunji where category = '".$cate."'"; 
     $result = mysqli_query($conn, $sql);
-
+    
 
     while($row = mysqli_fetch_array($result)) {
         $data[] = array(

@@ -5,34 +5,60 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script defer src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <style>
-        .outer {
-            width: 1100px;
-            margin: 0 auto;;
+        .wrap {
+            width: 90%;
         }
-        .img_box {
-            width: 0%;
-            height: 57vw;
-            
-            opacity: 0;
-            transition: all 0.5s;
-            overflow: hidden;
+        .d_img_wrap_m {
+            width: 90%;
+
+            display: flex;
+            flex-wrap: wrap;
         }
-        .img_box_active {
-            width: 50%;
-            opacity: 1;
+        .d_imgbox {
+            width: calc(100% / 5);
+            font-size: 0;
         }
-        .inner {
-            height: 100%;
-            background: url(./img/main_section2_banner.jpg) no-repeat left top / cover;
+        .d_imgbox:first-child {
+            width: 100% !important;
+           
         }
+        .d_imgbox > img {
+            width: 100%;
+        }
+        
     </style>
 </head>
 <body>
-    <div class="outer ">
-        <div class="img_box ">
-            <div class="inner"></div>
+    <div class="main">
+        <div class="d_img_wrap_m">
+            <div class="d_imgbox">
+                <img src="./img/new/1.jpg" alt="d_img">
+            </div>
+            <div class="d_imgbox">
+                <img src="./img/new/1.jpg" alt="d_img">
+            </div>
+            <!-- 랜덤 -->
+            <div class="d_imgbox">
+                <img src="./img/new/3.jpg" alt="d_img">
+            </div>
+            <div class="d_imgbox">
+                <img src="./img/new/4.jpg" alt="d_img">
+            </div>
+            <div class="d_imgbox">
+                <img src="./img/new/5.jpg" alt="d_img">
+            </div>
+            <div class="d_imgbox">
+                <img src="./img/new/6.jpg" alt="d_img">
+            </div>
         </div>
     </div>
+
+    <script>
+        
+
+
+    </script>
 </body>
 </html>

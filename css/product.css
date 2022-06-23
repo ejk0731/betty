@@ -229,3 +229,99 @@ main {
     text-decoration: line-through;
     color: gray;
 }
+@media screen and (max-width: 990px) {
+    .sub_nav {
+        width: 80%;
+        margin: 0 auto;
+        
+        display: flex;
+        align-items: center;
+        /*  */
+    }
+    .sub_nav > ul {
+        display: flex;
+        color: #a19388;
+        /*  */
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .sub_nav > h2 {
+        font-weight: 500;
+        font-size: 15px;
+        margin-right: 10px;
+        padding-right: 20px;
+        box-sizing: border-box;
+        display: inline-block;
+        border-right: 2px solid;
+        white-space: nowrap;
+    }
+    .best4_wrap {
+        margin: 0 auto;
+        /*  */
+        width: 100%;
+    }
+    .best_ul > li {
+        padding: 10px;
+        font-size: 0;
+        /*  */
+        width: calc((100% - (10px * 2 * 3)) / 3);
+    }
+    .best_ul > li:nth-child(4) {
+        /*  */
+        display: none;
+    }
+    .cate_item_wrap {
+        margin: 0 auto;
+        /*  */
+        width: 100%;
+    }
+    .cate_ul > li {
+        padding: 10px;
+        font-size: 0;
+        /*  */
+        width: calc((100% - (10px * 2 * 2)) / 2);
+    }
+}
+@media screen and (max-width: 480px) {
+    main {
+        padding-top: 100px;
+    }
+    .sub_nav > ul > li {
+        box-sizing: border-box;
+        /*  */
+        padding: 0 10px;
+    }
+    .best4_wrap {
+        margin: 0 auto;
+        /*  */
+        width: 100%;
+    }
+    .best_ul > li {
+        font-size: 0;
+        /*  */
+        width: calc((100% - (5px * 2 * 3)) / 3);
+        padding: 5px;
+    }
+    .cate_item_wrap {
+        margin: 0 auto;
+        /*  */
+        width: 100%;
+    }
+    .cate_ul > li {
+        font-size: 0;
+        /*  */
+        padding: 0px;
+        padding-bottom: 20px;
+        width: calc(100% / 2);
+    }
+    .cate_desc {
+        font-size: 12px;
+        font-family: 'Poppins', sans-serif;
+        
+        transition: all 0.5s;
+        opacity: 1;
+        /*  */
+        padding-left: 10px;
+        box-sizing: border-box;
+    }
+}

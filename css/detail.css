@@ -55,7 +55,7 @@ section {
 .d_desc_fix {
     position: fixed;
     top: 160px;
-    max-width: 427px;
+    /* max-width: 427px; */
     width: 24%;
 }
 .headcate {
@@ -177,6 +177,7 @@ section {
     line-height: 30px;
     text-align: center;
     font-size: 12px;
+    border: 1px solid #d7d7d7;
     background: #d7d7d7;
     color: white;
     display: inline-block;
@@ -184,10 +185,10 @@ section {
     margin-right: 5px;
     cursor: pointer;
     /* float: left; */
-    padding: 0 !important;
+    padding: 0 ;
 }
 .d_size_active {
-    border: 2px solid black;
+    border: 2px solid black !important;
     line-height: 26px;
 }
 /* 선택 옵션 info ///////////////////////////////////////////////////// */
@@ -310,4 +311,106 @@ em {
     border-bottom: 1px solid #d7d7d7;
     margin: 0;
     padding: 90px 0 ;
+}
+
+@media screen and (max-width: 900px) {
+    .d_opt_title {
+        width: 30px;
+        height: 51px;
+        font-size: 13px;
+        line-height: 51px;
+        /*  */
+        display: none;
+    }
+    .d_color_box {
+        padding-top: 10px;
+    }
+}
+@media screen and (max-width: 805px) {
+    .detail_box {
+        display: flex;
+    
+        /* background-color: skyblue; */
+        /*  */
+        flex-direction: column;
+    }
+    .d_img_wrap {
+        
+        display: flex;
+        flex-wrap: wrap;
+        
+        /* background: yellowgreen; */
+        /* height: 500px; */
+        /*  */
+        width: 100%;
+    }
+    .d_desc_wrap {
+        float: left;
+        width: 30%;
+        padding-left: 30px;
+        box-sizing: border-box;
+        position: static;
+        z-index: 999;
+        /*  */
+        /* padding-left: 30px; */
+        width: 100%;
+        padding: 10px 30px 0;
+    
+        /* background-color: bisque; */
+        /* height: 500px; */
+    }
+    .d_desc_fix {
+        top: 160px;
+        /* max-width: 427px; */
+        /*  */
+        width: 100%;
+        position: static !important;
+    }
+    .board_wrap {
+        font-family: 'Poppins', sans-serif;
+        padding-top: 90px;
+        /*  */
+        width: 90%;
+        margin: 0 auto;
+    }
+
+}
+@media screen and (max-width: 450px) {
+    main {
+        max-width: 1500px;
+        margin: 0 auto;
+        
+        /* background: pink; */
+        /*  */
+        width: 100%;
+    }
+    section {
+        padding-top: 100px;
+    }
+    /* //////////////////////////// */
+    
+    .d_imgbox {
+        /* height: 41.2vw;
+        overflow: hidden; */
+        box-sizing: border-box;
+        font-size: 0;
+        /*  */
+        width: calc(100% / 5);
+        font-size: 0;
+        padding: 0px;
+        cursor: pointer;
+    }
+    .d_imgbox:first-child {
+        /*  */
+        width: 100% !important;
+    }
+    
+    .headcate {
+        padding-top: 3px;
+        /*  */
+        display: none;
+    }
+    
+
+
 }

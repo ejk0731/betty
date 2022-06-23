@@ -1,14 +1,27 @@
+
+
 // header 스크롤시 배경주기, 글씨 위치 중간으로 올려주기
 
 $(window).scroll(function(){
     let s_top = $(window).scrollTop();
-    if(s_top >= 90){
-        $('header').addClass('header_active')
-        $('nav > ul').addClass('nav_ul_active')
+    if(screen.width > 480) {
+
+        if(s_top >= 90){
+            $('header').addClass('header_active')
+            $('nav > ul').addClass('nav_ul_active')
+        }
+        if(s_top <= 5) {
+            $('header').removeClass('header_active')
+            $('nav > ul').removeClass('nav_ul_active')
+        }
     }
-    if(s_top <= 5) {
-        $('header').removeClass('header_active')
-        $('nav > ul').removeClass('nav_ul_active')
+    else {
+        if(s_top >= 90){
+            $('header').addClass('header_active')
+        }
+        if(s_top <= 5) {
+            $('header').removeClass('header_active')
+        }
     }
 })
 
@@ -51,3 +64,29 @@ function get_url_info(key) {
         return -1;
     }
 }
+
+// 햄버거 버튼
+// let ham_chk = true;
+$('.ham_btn').click(function(){
+    $('.panbox').addClass('panbox_active')
+})
+$('.close_btn').click(function(){
+    $('.panbox').removeClass('panbox_active')
+})
+
+
+let pan_chk = true;
+$('.panbox_bot > ul > li').click(function(){
+    if(pan_chk){
+        $(this).find('.pan_inner').addClass('pan_inner_active')
+        pan_chk = false;
+    }
+    else {
+        $(this).find('.pan_inner').removeClass('pan_inner_active')
+        pan_chk = true;
+    }
+})
+
+// top 버튼 //////////////////////////////////////////////////////////////////
+let top_load = `<div class="top"><a href="#">TOP</a></div>`
+$('.wrap').prepend(top_load)
